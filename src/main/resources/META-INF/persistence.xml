@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+  <persistence-unit name="AppPU">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <class>io.ikka.jpa.entities.SysUser</class>
+    <properties>
+
+      <property name="hibernate.connection.url" value="jdbc:firebirdsql:localhost/3050:D:/db/hibernate5.FDB"/>
+      <property name="hibernate.connection.driver_class" value="org.firebirdsql.jdbc.FBDriver"/>
+      <property name="hibernate.connection.username" value="SYSDBA"/>
+      <property name="hibernate.connection.password" value="masterkey"/>
+      <property name="hibernate.archive.autodetection" value="class"/>
+      <property name="hibernate.show_sql" value="false"/>
+      <property name="hibernate.format_sql" value="true"/>
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
+
+      <!--<property name="javax.persistence.schema-generation-action" value="create"/>-->
+      <!--<property name="javax.persistence.schema-generation-target" value="database"/>-->
+    </properties>
+  </persistence-unit>
+</persistence>

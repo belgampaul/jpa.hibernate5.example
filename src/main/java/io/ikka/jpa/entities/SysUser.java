@@ -1,6 +1,8 @@
 package io.ikka.jpa.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * @author ikka
@@ -9,11 +11,13 @@ import javax.persistence.*;
 @Entity
 public class SysUser {
 
-@Id
+  @Id
   @SequenceGenerator(name = "seq_gen", sequenceName = "seq_sysuser")
-  @GeneratedValue(strategy = GenerationType.AUTO, generator="seq_gen")
+  @GeneratedValue(strategy = GenerationType.AUTO, generator = "seq_gen")
   private Long id;
 
+  @NotNull
+  @Size(min = 2, max = 255, message = "Name is required, maximum 255 characters.")
   private String username;
 
   public Long getId() {
